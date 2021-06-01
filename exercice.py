@@ -19,22 +19,40 @@ def orthogonal(v1, v2):
 
 def average(values):
 	# TODO: Calculer la moyenne des valeurs positives (on ignore les valeurs strictement négatives).
+	somme = 0
+	total_nombre = 0
 	for v in values:
-		pass # La variable v contient une valeur de la liste.
+		if v >= 0:
+			somme += v
+			total_nombre += 1
+	return somme/total_nombre
+
 
 def bills(value):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur.
+	twenties = 0
+	tens = 0
+	fives = 0
+	ones = 0
 	while value != 0:
 		if value >= 20:
-			pass
-		elif value >= 10:
-			pass
-		elif value >= 5:
-			pass
-		elif value >= 1:
-			pass
+			twenties += 1
+			value -= 20
 
-	return (twenties, tens, fives, twos, ones);
+		elif value >= 10:
+			tens += 1
+			value -= 10
+
+		elif value >= 5:
+			fives += 1
+			value -= 5
+
+		elif value >= 1:
+			ones += 1
+			value -= 1
+
+
+	return (twenties, tens, fives, ones);
 
 if __name__ == "__main__":
 	print(dissipated_power(69, 420))
